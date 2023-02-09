@@ -11,7 +11,7 @@ import projectData from "../data/projectData";
 
 function Projects() {
 	const detectScroll = useScrollNav('nav3');
-	const imageList = [image1, image2, image3, image4, image5];
+	const imageList = [image2, image3, image4, image5];
 	/*
 	let [title, setTitle] = useState([
 		'[React] React 설치와 개발환경 셋팅하기',
