@@ -39,5 +39,35 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"> </script>
+      <script>
+         $(document).scroll(function () {
+           var $nav = $(".navscroll");
+           $nav.toggleClass('scrolled', $(this).scrollTop() > 10);
+         });
+      </script>
+      <script>
+         $(document).ready(function () {
+            $(document).click(function (event) {
+                var clickover = $(event.target);
+                var _opened = $(".navbar-collapse").hasClass("show");
+                if (_opened === true && !clickover.hasClass("navbar-toggler")) {
+                    $(".navbar-toggler").click();
+                }
+            });
+         });
+      </script>
+      <script>
+        /*
+        document.querySelectorAll('#nav-tab>[data-bs-toggle="tab"]').forEach(el => {
+          el.addEventListener('shown.bs.tab', () => {
+            const target = el.getAttribute('data-bs-target')
+            const scrollElem = document.querySelector(`${target} [data-bs-spy="scroll"]`)
+            bootstrap.ScrollSpy.getOrCreateInstance(scrollElem).refresh()
+
+  })
+})
+*/
+      </script>
   </body>
 </html>

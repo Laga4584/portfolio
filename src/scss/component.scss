@@ -1,0 +1,339 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700&display=swap");
+
+@import "../../node_modules/bootstrap/scss/_functions.scss";
+@import "../../node_modules/bootstrap/scss/_variables.scss";
+@import "../../node_modules/bootstrap/scss/mixins/_breakpoints.scss";
+
+
+/* VARIABLES & MIXINS */
+
+$purple: #6163ff;
+$orange: #ff4c00;
+$white: #ffffff;
+@mixin background-image {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.normal_color {
+  color: white !important;
+}
+.point_color {
+  color: $purple !important;
+}
+
+.text_color {
+  color: #9ca9b3;
+}
+
+.h-10{
+  height: 10vh;
+}
+.h-80{
+  height: 80vh;
+}
+.h-90{
+  height: 90vh;
+}
+
+.btn_custom {
+  background-color: $purple !important;
+  color: white !important;
+  border-radius: 2px !important;
+  min-width: 80px;
+}
+
+.btn_shadow {
+  box-shadow: 0 4px 10px -5px rgba(0, 0, 0, 0.8) !important;
+}
+
+.box_border {
+  border: solid 1px #ececec !important;
+}
+
+.bg_black {
+  background-color:  #121212;
+}
+.sec_bg {
+  background: rgba(0,0,0,.4);
+}
+
+.card_bg {
+  background: white;
+  background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.2) 0%, transparent 100%);
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.2) 0%, transparent 100%);
+}
+
+.button_size {
+  width: 32px;
+}
+
+.carousel_size {
+  height: 80vh;
+}
+
+/* App */
+.App{
+  background-color: #121212 !important;
+  scroll-behavior: smooth;
+        height: 100vh;
+        scroll-snap-type: y mandatory;
+        scroll-padding-top: 10px;
+        overflow-y: scroll;
+}
+.App::-webkit-scrollbar { width: 0; background: transparent;}
+
+
+@include media-breakpoint-down(sm) {
+  .sec1, .sec2 {
+    scroll-snap-align: start;
+  }
+  /*
+  .skill {
+    scroll-snap-align: start;
+  }
+  */
+}
+
+@include media-breakpoint-up(sm) {
+  /*
+  .snap_align {
+    scroll-snap-align: start;
+  }
+  */
+  .App > section {
+    scroll-snap-align: start;
+}
+
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Mulish", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* BUTTON-DEFAULT */
+
+.btn:focus {
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
+/* NAVBAR-DEFAULT */
+
+.navigation_bar {
+  background-color: #121212 !important;
+
+    @include media-breakpoint-up(lg) {
+      .navscroll.scrolled {
+          background-color: #121212 !important;
+          transition: background-color 400ms linear;
+    }
+  }
+
+    @include media-breakpoint-down(md) {
+      .navscroll {
+        background-color: #121212 !important;
+    }
+  }
+
+  @include media-breakpoint-between(md, lg) {
+      .navscroll {
+        background-color: #121212 !important;
+    }
+  }
+  
+  .navbar-light {
+    .navbar-toggler {
+      border-color: transparent !important;
+      &:focus {
+        box-shadow: none !important;
+      }
+    }
+    /*
+    .navbar-nav{
+      .nav-link.active, .show>.nav-link{
+        color: $orange !important;
+      }
+    }
+    */
+    
+    .navbar-nav a {
+      //color: white !important;
+      text-decoration: none !important;
+      display: block !important; 
+      height: 40px !important; 
+      line-height: 40px !important; 
+      padding: 0 15px !important;
+      &:focus {
+        color: $purple !important;
+      }
+    }
+
+    .navbar-nav a:after {
+      content: ''; 
+      display: block !important; 
+      width: 0% !important; 
+      height: 1px !important; 
+      background-color: $purple !important; 
+      margin: -3px auto 0 !important; 
+      transition: width .5s ease !important;
+    }
+    .navbar-nav a:hover:after, .navbar-nav a.active:after {width: 100% !important;}
+
+  
+  }
+}
+
+
+/* HOME PAGE */
+
+
+.sec{
+  @include media-breakpoint-up(sm){
+    height: 100vh;
+  }
+  
+}
+
+.sec_1 {
+  .header_height {
+    height: 100vh;
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+}
+.text_area{
+  z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* 배경 */
+.backSky {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  background: linear-gradient(to right, #111, #0e0f19);  
+  overflow: hidden;
+}
+
+/* 별을 감싼 부모 */
+.sky {
+  width: 150vmax;
+  height: 150vmax;
+  animation: moveStar 240s linear infinite;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+/* 별 */
+.sky .star {
+  fill: #fff;
+  stroke: none;
+  stroke-width: 0;
+}
+
+/* 별 이동효과 */
+@keyframes moveStar {
+  from {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.snip1534 {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  min-width: 230px;
+  width: 100%;
+  color: $white;
+  text-align: left;
+  font-size: 16px;
+  background-color: #000000;
+  * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all 0.45s ease;
+    transition: all 0.45s ease;
+  }
+  a {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+  }
+  img {
+    vertical-align: top;
+    max-width: 100%;
+    backface-visibility: hidden;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    opacity: 0.75;
+    &:hover {
+      opacity: 1;
+      -webkit-filter: grayscale(0%);
+      filter: grayscale(0%);
+    }
+  }
+  .img_caption {
+    z-index: 1;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(255, 76, 0, 0.85);
+    background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.2) 0%, transparent 100%);
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.2) 0%, transparent 100%);
+    padding: 20px;
+    &::before {
+      content: "";
+      width: 20px;
+      height: 20px;
+      background-color: $white;
+      top: -20px;
+      bottom: 0;
+      left: 50%;
+      -webkit-transform: translate(-50%, 50%) rotate(45deg);
+      transform: translate(-50%, 50%) rotate(45deg);
+      position: absolute;
+    }
+  }
+}
+
+.fadeInUp {
+  animation: fade-in-up 0.5s;
+}
+
+.skill{
+  @include media-breakpoint-down(sm){margin-bottom: 30px;}
+
+}
+
+/* Projects */
+/*
+.carousel-control-next, .carousel-control-prev{
+  height: 80% !important;
+}
+*/
