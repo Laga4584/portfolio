@@ -50,8 +50,8 @@ function Projects() {
 										<p className="mb-2 mt-4 normal_color">개인 포트폴리오 웹사이트</p>
 										<p className="text_color">React와 Bootstrap을 이용해 모바일과 PC에서 볼 수 있도록 반응형을 고려하여 작업하였습니다.</p>
 										<div className="d-flex justify-content-evenly">
-										<a href=""><img className="img-fluid" alt="github"  src={icon1} width="60px" /></a>
-										<a href=""><img className="img-fluid" alt="pagelink"  src={icon2} width="40px"/></a>
+										<a href="https://laga4584.github.io/portfolio/"><img className="img-fluid" alt="github"  src={icon1} width="60px" /></a>
+										<a href="https://github.com/Laga4584/portfolio"><img className="img-fluid" alt="pagelink"  src={icon2} width="40px"/></a>
 										</div>
 									</div>
 								</div>
@@ -76,8 +76,8 @@ function Projects() {
 										<p className="mb-2 mt-4 normal_color">{content.subtitle}</p>
 										<p className="text_color">{content.description}</p>
 										<div className="d-flex justify-content-evenly">
-										<a href=""><img className="img-fluid" alt="github"  src={icon1} width="60px" /></a>
-										<a href=""><img className="img-fluid" alt="pagelink"  src={icon2} width="40px"/></a>
+										<a href={content.github}><img className="img-fluid" alt="github"  src={icon1} width="60px" /></a>
+										<a href={content.site}><img className="img-fluid" alt="pagelink"  src={icon2} width="40px"/></a>
 										</div>
 									</div>
 								</div>
