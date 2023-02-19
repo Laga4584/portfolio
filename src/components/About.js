@@ -1,14 +1,15 @@
+import { useRef } from 'react';
 import useScrollNav from '../hooks/useScrollNav';
 import useScrollFadeIn from '../hooks/useScrollFadeIn';
 
 function About() {
-		const detectScroll = useScrollNav('nav4');
+	const detectScroll = useScrollNav('nav4');
         const fadeInBottom1 = useScrollFadeIn('up', 1, 0);
         const fadeInBottom2 = useScrollFadeIn('up', 1, 0.2);
 		const fadeInBottom3 = useScrollFadeIn('up', 1, 0.4);
 		const fadeInBottom4 = useScrollFadeIn('up', 1, 0.6);
         return (
-            <section className="sec"  id="scrollspyHeading4" {...detectScroll}> 
+            <section className="sec"  id="scrollspyHeading4"  {...detectScroll}> 
 			<div className="container mx-auto py-5">
 				<div className="mb-4 text-center">
 					<p className="display-6 mb-1 point_color">About</p>

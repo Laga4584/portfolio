@@ -4,20 +4,19 @@ import HomeIcon from '@material-ui/icons/Home';
 import SkillIcon from '@material-ui/icons/Create';
 import ProjectIcon from '@material-ui/icons/Assignment';
 import AboutIcon from '@material-ui/icons/Person';
+import { useDispatch, useSelector } from "react-redux";
+import { changePage } from "../modules/page";
 
 function Navbar() {
-	const onPress = (e) => {
+	var viewState = useSelector(state => state.page.viewState);
+	//var pageState = useSelector(state => state.page.pageState);
+
+	  const dispatch = useDispatch();
+	  const OnClick = (navId, e) => {
 		e.preventDefault();
-		
-		const target = window.document.getElementById(
-		  e.currentTarget.href.split("#")[1]
-		);
-		console.log(target);
-		if (target) {
-			console.log(target);
-		  target.scrollIntoView({ behavior: "smooth" });
-		}
-	  };
+		console.log(navId);
+		dispatch(changePage(navId));
+	  }
 	 
         return (
             <div className="container-fluid navigation_bar">
@@ -30,16 +29,16 @@ function Navbar() {
 				  <div className="collapse navbar-collapse" id="navbarSupportedContent">
 				    <ul className="navbar-nav ms-auto nav nav-pills">
 				      <li className="nav-item my-1 align-start me-4">
-					  <a className="point_color" onClick={(e) => onPress(e)} href="#scrollspyHeading1" id="nav1"><span className="d-lg-none d-xl-none me-3"><HomeIcon /></span>Home</a>
+					  <a className={ viewState=='nav1' ? 'point_color' : 'normal_color' } onClick={(e) => OnClick('nav1', e)} href="#" id="nav1"><span className="d-lg-none d-xl-none me-3"><HomeIcon /></span>Home</a>
 				      </li>
 				      <li className="nav-item my-1 me-4">
-					  <a className="normal_color" onClick={(e) => onPress(e)} href="#scrollspyHeading2" id="nav2"><span className="d-lg-none d-xl-none me-3"><SkillIcon /></span>Skills</a>
+					  <a className={ viewState=='nav2' ? 'point_color' : 'normal_color' } onClick={(e) => OnClick('nav2',e)} href="#" id="nav2"><span className="d-lg-none d-xl-none me-3"><SkillIcon /></span>Skills</a>
 				      </li>
 				      <li className="nav-item my-1 me-4">
-					  <a className="normal_color"  onClick={(e) => onPress(e)} href="#scrollspyHeading3" id="nav3"><span className="d-lg-none d-xl-none me-3"><ProjectIcon /></span>Projects</a>
+					  <a className={ viewState=='nav3' ? 'point_color' : 'normal_color' }  onClick={(e) => OnClick('nav3',e)} href="#" id="nav3"><span className="d-lg-none d-xl-none me-3"><ProjectIcon /></span>Projects</a>
 				      </li>
 				      <li className="nav-item my-1 me-4">
-					  <a className="normal_color"  onClick={(e) => onPress(e)} href="#scrollspyHeading4" id="nav4"><span className="d-lg-none d-xl-none me-3"><AboutIcon /></span>About</a>
+					  <a className={ viewState=='nav4' ? 'point_color' : 'normal_color' }  onClick={(e) => OnClick('nav4',e)} href="#" id="nav4"><span className="d-lg-none d-xl-none me-3"><AboutIcon /></span>About</a>
 				      </li>					 
 				    </ul>
 				  </div>

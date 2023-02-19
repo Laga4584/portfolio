@@ -1,21 +1,25 @@
+import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import useScrollFadeIn from '../hooks/useScrollFadeIn';
 import useScrollNav from '../hooks/useScrollNav';
+import useMoveScroll from '../hooks/useMoveScroll';
 import image1 from "../images/skills/language.png";
 import image2 from "../images/skills/frontend.png";
 import image3 from "../images/skills/backend.png";
 import image4 from "../images/skills/database.png";
 import image5 from "../images/skills/deployment.png";
 import image6 from "../images/skills/library.png";
+import { useRef } from 'react';
 
-function Skills() {
-    
+function Skills() {	
+	const detectScroll = useScrollNav('nav2');
 		const fadeInBottom1 = useScrollFadeIn('up', 1, 0);
 		const fadeInBottom2 = useScrollFadeIn('up', 1, 0.2);
 		const fadeInBottom3 = useScrollFadeIn('up', 1, 0.4);
 		const fadeInBottom4 = useScrollFadeIn('up', 1, 0.6);
 		const fadeInBottom5 = useScrollFadeIn('up', 1, 0.8);
 		const fadeInBottom6 = useScrollFadeIn('up', 1, 1.0);
-		const detectScroll = useScrollNav('nav2');
+	
         return (
             <section className="sec"  id="scrollspyHeading2" {...detectScroll}> 
 			<div className="container mx-auto py-5">

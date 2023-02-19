@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useRef} from "react";
 import image1 from "../images/projects/pj_portfolio.png";
 import image2 from "../images/projects/onmyoji.png";
 import image3 from "../images/projects/writer.png";
@@ -12,13 +12,6 @@ import projectData from "../data/projectData";
 function Projects() {
 	const detectScroll = useScrollNav('nav3');
 	const imageList = [image2, image3, image4, image5];
-	/*
-	let [title, setTitle] = useState([
-		'[React] React 설치와 개발환경 셋팅하기',
-		'[React] JSX 를 이용해 HTML 페이지 제작해보기',
-		'[React] React 에서 state 변경해보기'	
-    ]);
-	*/
 
         return (
             <section className="sec" id="scrollspyHeading3" {...detectScroll}> 
